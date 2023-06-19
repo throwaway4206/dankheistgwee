@@ -1,5 +1,6 @@
 <div align="center">
   <img src="https://github.com/VillainsRule/Rumbler/assets/101288516/e0f2b728-bc6f-46c7-a121-a07d5f0746ff">
+  <p>join our <a href="https://discord.gg/BJCms66bcu">discord</a> if you're cool :)</p>
   <hr>
   <h2>Features</h2>
   <p align="left">
