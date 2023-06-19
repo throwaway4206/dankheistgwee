@@ -19,6 +19,23 @@ module.exports = {
     // whether to automatically run the /daily and /weekly commands.
     autoDaily: true,
     autoWeekly: true,
+    
+    // a list of channels/servers to blacklist.
+    // if a server id/channel id is here, the bot will never join battles in that channel.
+    blacklist: {
+        
+        // a list of server IDs the bot will never join battles in
+        servers: [
+            'server id 1',
+            'server id 2'
+        ],
+        
+        // a list of channel IDs the bot will never join battles in
+        channels: [
+            'channel id 1',
+            'channel id 2'
+        ]
+    },
 
     // a large delay manager.
     delays: {
