@@ -5,8 +5,10 @@
   <p align="left">
     
     
-- [x] AutoJoin
+- [x] Auto Join
    - [x] Server/Channel join blacklist
+- [x] Auto Daily
+- [x] Auto Weekly
 - [x] Simple, easy dashboard
 - [x] Infinite accounts
     
