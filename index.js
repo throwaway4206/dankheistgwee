@@ -176,6 +176,9 @@ async function start(token) {
 
     // =================== Game Join Start ===================
 
+    if (config.blacklist.servers.indexOf(message?.guild?.id) > -1) return;
+    if (config.blacklist.channels.indexOf(message?.channel?.id) > -1) return;
+        
     if (message?.interaction?.commandName === 'battle' && message?.embeds[0]?.title?.includes('Rumble Royale hosted by ')) {
         message.react('872886436012126279');
         console.log(`> ${chalk.magentaBright(client.user.username)} joined a battle created by ${message?.embeds[0]?.title.replace('Rumble Royale hosted by ', '')}! (channel: ${message.channel.id})`);
