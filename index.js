@@ -8,6 +8,8 @@ const log = (log) => {
     if (socketAlive) io.emit('logs', logs);
 };
 
+let repoBase = 'VillainsRule/Rumbler';
+
 const fs = require('fs');
 const SimplDB = require('simpl.db');
 const express = require('express');
@@ -16,7 +18,7 @@ const selfbot = require('discord.js-selfbot-v13');
 const socketio = require('socket.io');
 
 console.log(chalk.red(`> Slashy (Rumble Edition) has started!`))
-console.log(chalk.hex('#FFA500')(`\t- If you encounter any issues, join our Discord: https://discord.gg/ejEkDvZCzu`))
+console.log(chalk.hex('#FFA500')(`\t- Join our Discord: https://discord.gg/BJCms66bcu`))
 console.log(chalk.yellowBright(`\n> Your version is: ${version}`))
 log(`Slashy (Rumble Edition) has started! Running v${version}.`)
 
@@ -42,7 +44,7 @@ process.on('uncaughtException', (error) => {
   console.error('uncaughtException', error);
 });
 
-fetch('https://raw.githubusercontent.com/SlashyLLC/RumbleRoyale/main/index.js').then((res) => res.text()).then((res) => {
+fetch(`https://raw.githubusercontent.com/${repoBase}/main/index.js`).then((res) => res.text()).then((res) => {
   if (res === '404: Not Found') {
     console.log(`> CRITICAL ERROR: Source cannot be fetched. ${(!config.devMode) ? 'Shutting off program...' : 'Keeping program alive due to Dev Mode.'}`);
     if (!config.devMode) process.exit(0);
@@ -50,8 +52,8 @@ fetch('https://raw.githubusercontent.com/SlashyLLC/RumbleRoyale/main/index.js').
   };
 
   let v = res.match(/Version ([0-9]*\.?)+/)[0]?.replace('Version ', '');
-  if (v && v !== version) console.log(chalk.bold.bgRed(`> There is a new version available: ${v} \n\t- Update: ${chalk.underline('https://github.com/SlashyLLC/RumbleRoyale')}`));
-  log(`v${v} has been released. Please <a href="https://github.com/SlashyLLC/RumbleRoyale">update</a> the bot.`)
+  if (v && v !== version) console.log(chalk.bold.bgRed(`> There is a new version available: ${v} \n\t- Update: ${chalk.underline(`https://github.com/${repoBase}`)}`));
+  log(`v${v} has been released. Please <a href="https://github.com/${repoBase}">update</a> the bot.`)
 }).catch((error) => {
   console.log(error);
 });
